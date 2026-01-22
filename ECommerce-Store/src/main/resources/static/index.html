@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Store</title>
+
+  <!-- MAIN STYLE -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- PAGE WRAPPER -->
+<div class="wrapper">
+
+  <nav class="navbar">
+    <h1>E-Commerce Store</h1>
+
+    <div class="right">Welcome,
+      <span id="uname"></span>
+
+     
+      <button onclick="location.href='cart.html'">
+       🛒 Cart <span id="cartCount">0</span>
+      </button>
+      
+      <button onclick="location.href='my-orders.html'">
+       📦 My Orders
+      </button>
+      
+      
+
+      <button onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+
+
+  <!-- PRODUCTS SECTION -->
+  <div class="container">
+
+    <h2>Our Products</h2>
+
+    <!-- ⭐ THIS MUST BE id="productList" -->
+    <div id="productList" class="products"></div>
+
+  </div>
+
+</div> <!-- /wrapper -->
+
+<!-- TOAST -->
+<div id="toast" class="toast" style="display:none;"></div>
+
+<!-- SCRIPTS -->
+<script src="js/products.js"></script>
+
+</body>
+</html>

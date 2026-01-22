@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Products</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <h2>Product Inventory</h2>
+
+  <table class="orders">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody id="products"></tbody>
+  </table>
+
+  <div class="pagination">
+    <button id="prev">Prev</button>
+    <span id="pageInfo"></span>
+    <button id="next">Next</button>
+  </div>
+
+  <button onclick="location.href='admin-dashboard.html'">⬅ Back</button>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-products.js"></script>
+
+</body>
+</html>

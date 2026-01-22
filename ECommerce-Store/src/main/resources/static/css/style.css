@@ -1,0 +1,440 @@
+/* =============================
+   GLOBAL
+============================= */
+*{
+  box-sizing:border-box;
+}
+
+/* 🌄 BACKGROUND IMAGE WITH GLOW */
+body{
+  margin:0;
+  font-family:Poppins, Arial, sans-serif;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url("https://static.vecteezy.com/system/resources/thumbnails/010/121/969/small/the-shopping-cart-on-tablet-for-business-concept-3d-rendering-photo.jpg")
+    no-repeat center/cover;
+
+  min-height:100vh;
+  color:#fff;
+  filter: brightness(1.05) saturate(1.2);
+  overflow-x:hidden;
+}
+
+/* Animated glow overlay */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:radial-gradient(
+    circle at 20% 30%,
+    rgba(255,255,255,0.18),
+    rgba(0,160,255,0.15),
+    transparent 60%
+  );
+  pointer-events:none;
+  animation: glow 5s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+  from{ opacity:.5; transform:scale(1);}
+  to{ opacity:1; transform:scale(1.05);}
+}
+
+/* Center page max width */
+.wrapper{
+  max-width:1150px;
+  margin:auto;
+}
+
+/* =============================
+   NAVBAR
+============================= */
+/* =============================
+   PREMIUM FULL-WIDTH NAVBAR
+============================= *//* =============================
+   PREMIUM NAVBAR
+============================= */
+/* ------------------------------
+   HEADER WRAPPER (YOUR DIV)
+--------------------------------*/
+
+
+.navbar{
+  position: sticky;
+  top: 2rem;
+  z-index: 1000;
+
+  width: 100%;
+  padding: 18px 40px;
+  border-radius:1.3rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* glass + gradient */
+  background: linear-gradient(
+  135deg,
+  #1fc8db,
+  #2cb5e8
+);
+  
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* premium border + shadow */
+  border-bottom: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 10px 28px rgba(0,0,0,.28);
+}
+
+/* Title */
+.navbar h1{
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  color: black;
+}
+
+/* Right Section */
+.navbar .right{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color:black;
+}
+
+/* Buttons */
+.navbar button{
+  background: #ffffff;
+  color: #2575fc;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+/* Hover animation */
+.navbar button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.25);
+  opacity: .95;
+}
+
+/* =========================
+   BADGES — UNIFIED STYLE
+   ========================= */
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:800;
+  color:white;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  box-shadow:0 0 12px rgba(0,0,0,.15);
+}
+
+
+/* =========================
+   STATUS COLORS
+   ========================= */
+.badge.created{
+  background:#ffb703;             /* Amber */
+  box-shadow:0 0 12px rgba(255,183,3,.55);
+}
+
+.badge.paid{
+  background:#06c167;             /* Green */
+  box-shadow:0 0 12px rgba(6,193,103,.55);
+}
+
+.badge.cancelled{
+  background:#e63946;             /* Red */
+  box-shadow:0 0 12px rgba(230,57,70,.55);
+}
+
+
+
+
+/* =============================
+   PAGE CONTENT
+============================= */
+.container{
+  padding:10px 20px 35px 20px;
+}
+
+.container h2{
+  color:white;
+  font-size:28px;
+  font-weight:800;
+}
+
+/* =============================
+   PRODUCT GRID
+============================= */
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+/* =============================
+   CARD
+============================= */
+.card{
+  background:white;
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+  transition:.25s ease;
+  color:#222;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 34px rgba(0,0,0,.16);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  border-radius:14px;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+.card h3{
+  margin:8px 0 6px;
+}
+
+.price{
+  font-size:18px;
+  color:#2575fc;
+  font-weight:700;
+  margin:6px 0 10px;
+}
+
+/* BUTTONS */
+button{
+  cursor:pointer;
+  border:none;
+  padding:10px 16px;
+  border-radius:12px;
+  background:#2575fc;
+  color:white;
+  font-weight:600;
+  transition:.2s;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+
+
+
+/* =============================
+   TOAST
+============================= */
+.toast{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#222;
+  color:white;
+  padding:12px 18px;
+  border-radius:12px;
+  opacity:.95;
+}
+
+#toast{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #222;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: .4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+#toast.show{
+  opacity: 1;
+  bottom: 40px;
+}
+
+
+/* =============================
+   RESPONSIVE
+============================= */
+@media(max-width:1100px){
+  .products{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:900px){
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+
+  .navbar{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .wrapper{
+    padding:0 12px;
+  }
+}
+
+
+/* =========================
+   TABLE INPUTS + BUTTONS
+   ========================= */
+.orders input{
+  padding:6px 10px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+.orders button{
+  padding:6px 12px;
+  border-radius:10px;
+  border:none;
+  background:#ff5c5c;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.orders button:hover{
+  opacity:.9;
+}
+
+
+/* =========================
+   MAIN TABLE
+   ========================= */
+.orders{
+  width:100%;
+  border-collapse:collapse;
+  background:#ffffff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+/* ---- HEADER ---- */
+.orders thead tr{
+  background:#e9f5ff;   /* light blue header */
+}
+
+.orders th{
+  padding:14px 12px;
+  font-weight:700;
+  text-align:left;
+  color:#1b2a3d;
+  font-size:15px;
+}
+
+/* ---- ROWS ---- */
+.orders td{
+  padding:12px;
+  border-bottom:1px solid #eee;
+  color:#222;
+  font-weight:500;
+}
+
+/* remove bottom line on last row */
+.orders tr:last-child td{
+  border-bottom:none;
+}
+
+/* hover highlight */
+.orders tbody tr:hover{
+  background:#f2f7ff;
+}
+
+
+/* =========================
+   PAGINATION
+   ========================= */
+.pagination{
+  margin-top:10px;
+  font-weight:600;
+  color:#333;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+
+
+.stock-low{
+  background:#ffe5e5;
+  color:#b00020;
+  font-weight:700;
+}
+
+.stock-mid{
+  background:#fff7d6;
+  color:#996c00;
+  font-weight:700;
+}
+
+.stock-high{
+  background:#e8ffe8;
+  color:#0a7b28;
+  font-weight:700;
+}
+
+.icon{
+  font-size:18px;
+  cursor:pointer;
+  margin-right:10px;
+  transition:0.2s;
+}
+
+.icon.save:hover{ color:#06c167; }
+.icon.delete:hover{ color:#e63946; }
+
+
+.page-text{
+  font-weight: 800;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  /* bright contrasting color */
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+
+  /* soft shadow */
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+
+  letter-spacing: .5px;
+}
+

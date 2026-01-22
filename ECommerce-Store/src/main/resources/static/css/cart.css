@@ -1,0 +1,121 @@
+.cart-wrapper{
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+/* Card */
+.cart-card{
+  display:flex;
+  align-items:center;
+  gap:18px;
+
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:14px;
+
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+}
+
+/* Image */
+.cart-img{
+  width:110px;
+  height:110px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+
+/* Total */
+#totalBox{
+  text-align:right;
+  font-size:22px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+/* Toast */
+.toast{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  padding:14px 18px;
+  border-radius:10px;
+  background:black;
+  color:white;
+  opacity:0;
+  transition:.4s;
+}
+
+.toast.show{
+  opacity:1;
+}
+
+/* ---------- BUTTON STYLE UPGRADE ---------- */
+
+.qty-box button{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:none;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.25s;
+}
+
+/* Minus */
+.qty-box button:nth-child(1){
+  background:#e3f0ff;
+  color:#2575fc;
+}
+
+/* Plus */
+.qty-box button:nth-child(3){
+  background:#e3fce6;
+  color:#0a7b28;
+}
+
+/* Remove / Trash */
+.remove{
+  background:#ffebe8 !important;
+  color:#d42a2a !important;
+}
+
+/* Hover effect */
+.qty-box button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px rgba(0,0,0,.18);
+}
+
+/* Info */
+
+
+.cart-info{
+  flex:1;
+  color:black;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.cart-info .unit{
+  font-weight:600;
+  color:#444;
+}
+
+.cart-info .qty-price{
+  font-size:14px;
+  font-weight:600;
+  color:#222;
+}
+
+.cart-info .qty-price span{
+  color:#2575fc;
+  font-weight:900;
+}
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 26px;
+      border-bottom:2px solid rgba(255,255,255,.35);
+      color:white;
+      font-weight:900;
+      font-size:26px;
+    }
+
+    .logout{
+      background:#ff4d4f;
+      border:none;
+      padding:10px 18px;
+      border-radius:14px;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .logout:hover{ opacity:.9; }
+
+    /* --- CENTER ZONE --- */
+    .admin-center{
+      text-align:center;
+      margin-top:50px;
+      color:white;
+    }
+
+    .actions{
+      margin-top:30px;
+      display:flex;
+      flex-direction:column;      /* stack vertically */
+      gap:20px;                   /* space between buttons */
+      align-items:center;
+    }
+
+    .big-btn{
+      width:320px;
+      padding:16px 20px;
+      font-size:17px;
+      border-radius:18px;
+      border:none;
+      background:#2575fc;
+      color:white;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:0 4px 14px rgba(0,0,0,.25);
+      transition:.2s;
+    }
+
+    .big-btn:hover{
+      transform:translateY(-2px);
+      opacity:.95;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div>Admin Dashboard</div>
+
+    <button class="logout" onclick="logout()">
+      Logout
+    </button>
+  </div>
+
+
+  <!-- CENTER -->
+  <div class="admin-center">
+
+    <h3>Welcome, Admin</h3>
+
+    <div class="actions">
+
+      <button class="big-btn" onclick="location.href='add-product.html'">
+        ➕ Add New Product
+      </button>
+
+      <button class="big-btn" onclick="location.href='admin-orders.html'">
+        📄 View All Orders
+      </button>
+
+      <button class="big-btn" onclick="location.href='admin-products.html'">
+        🛒 Manage Products
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- AUTH CHECK -->
+  <script src="js/admin-auth.js"></script>
+
+  <script>
+    function logout(){
+      localStorage.removeItem("admin");
+      location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
